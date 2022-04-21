@@ -18,20 +18,6 @@ jobs:
       
       - name: prepering to build
         run: sudo apt install cmake g++
-         
-      - name: Building of forrmater_lib
-        run: |
-         cd formatter_lib
-         cmake . 
-         cmake --build .
-         cd ..
-        
-      - name: Building of forrmater_ex_lib
-        run: |
-          cd formatter_ex_lib
-          cmake . 
-          cmake --build .
-          cd ..
           
       - name: Building of solver for release
         run: |
@@ -55,6 +41,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.ref }}
+          release_name: ${{ github.ref }}
           draft: false
           prerelease: false
       - name: Upload release
