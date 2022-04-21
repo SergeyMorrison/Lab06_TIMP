@@ -4,6 +4,8 @@ name: deb_packege
 
 on:
   push:
+    branches:
+     - main
     tags: 
       - "*-deb_v*"
 
