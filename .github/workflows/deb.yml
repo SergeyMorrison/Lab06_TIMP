@@ -3,8 +3,8 @@
 name: deb_packege
 
 on:
-  push:
-    tags: 
+ push:
+    tags:
       - "*deb_v*"
    
 
