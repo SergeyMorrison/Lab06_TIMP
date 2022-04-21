@@ -35,7 +35,7 @@ jobs:
           
       - name: Building of solver for release
         run: |
-          cmake -H. -B _build -DCPACK_GENERATOR_DEB=ON
+          cmake . -B _build -DCPACK_GENERATOR_DEB=ON
           cd _build
           make package
           make package_source
