@@ -5,7 +5,7 @@ name: deb_packege
 on:
  push:
     tags:
-      - "deb_v*"
+      - "*deb_v*"
    
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
