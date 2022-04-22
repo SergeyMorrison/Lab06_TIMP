@@ -9,17 +9,16 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
           
       - name: Building of solver for release
         run: |
-          cmake -DCPACK_GENERATOR_MSI=ON -B ./_build
+          cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_GENERATOR_MSI=ON -B ./_build
+          cmake --build . --config Release
           cd _build
-          make package
-          make package_source
-          cd ..
+          cpack -G WIX
           cd ..
         
       - name: Moving to artifacts
